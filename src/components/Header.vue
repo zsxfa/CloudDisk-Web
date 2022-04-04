@@ -67,6 +67,8 @@ export default {
 			this.$message.success('退出登录成功！')
 			this.$store.dispatch('getUserInfo').then(() => {
 				this.removeCookies('token')
+				this.$store.state.user.isLogin = false
+				debugger
 				this.$router.push({ path: '/login' })
 			})
 		}

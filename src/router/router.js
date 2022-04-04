@@ -39,7 +39,7 @@ export default new Router({
 				requireAuth: true, //  当前路由是否需要登录才可进入
 				title: '网盘',
 				content: {
-					description: '图片 文档 视频 音乐 其他 回收站 我的分享'
+					description: '图片 文档 视频 音乐 其他 回收站'
 				}
 			}
 		},
@@ -55,18 +55,18 @@ export default new Router({
 			component: () =>
 				import(/* webpackChunkName: "onlyOffice" */ '_v/OnlyOffice.vue')
 		},
-		{
-			path: '/share/:shareBatchNum',
-			name: 'Share',
-			component: () => import(/* webpackChunkName: "share" */ '_v/Share.vue'),
-			meta: {
-				title: '分享',
-				content: {
-					description: '查看他人分享'
-				}
-			},
-			props: true
-		},
+		// {
+		// 	path: '/share/:shareBatchNum',
+		// 	name: 'Share',
+		// 	component: () => import(/* webpackChunkName: "share" */ '_v/Share.vue'),
+		// 	meta: {
+		// 		title: '分享',
+		// 		content: {
+		// 			description: '查看他人分享'
+		// 		}
+		// 	},
+		// 	props: true
+		// },
 		{
 			path: '*',
 			name: 'Error_404',

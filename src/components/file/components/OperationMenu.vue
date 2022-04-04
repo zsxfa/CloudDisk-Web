@@ -37,7 +37,7 @@
 				:disabled="(selectedFiles.length && isBatchOperation) || fileType !== 0"
 				>新建文件夹</el-button
 			>
-			<el-dropdown class="create-drop" trigger="hover">
+			<!-- <el-dropdown class="create-drop" trigger="hover">
 				<el-button
 					type="primary"
 					icon="el-icon-edit-outline"
@@ -72,7 +72,7 @@
 						/>PPT 演示文稿</el-dropdown-item
 					>
 				</el-dropdown-menu>
-			</el-dropdown>
+			</el-dropdown> -->
 		</el-button-group>
 		<div class="batch-operate-group">
 			<el-button-group v-if="isBatchOperation">
@@ -97,7 +97,7 @@
 					@click="handleBatchDownloadBtnClick"
 					>批量下载</el-button
 				> -->
-				<el-button
+				<!-- <el-button
 					type="primary"
 					v-if="
 						selectedFiles.length && fileType !== 6 && $route.name !== 'Share'
@@ -105,7 +105,7 @@
 					icon="el-icon-share"
 					@click="handleBatchShareBtnClick"
 					>批量分享</el-button
-				>
+				> -->
 			</el-button-group>
 		</div>
 

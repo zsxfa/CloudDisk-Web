@@ -183,7 +183,7 @@ export default {
 					}
 				}, 1000)
 			}
-
+			// debugger
 			sendCode(this.registerForm.telephone).then((res) => {
 				this.$message.success(res.message)
 			})
@@ -213,6 +213,7 @@ export default {
 		 */
 		submitForm(formName) {
 			this.$refs[formName].validate((valid) => {
+				debugger
 				if (valid) {
 					// 表单各项校验通过
 					addUser(this.registerForm).then((res) => {

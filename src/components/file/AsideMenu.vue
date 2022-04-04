@@ -64,14 +64,14 @@
 				<i class="el-icon-delete"></i>
 				<span slot="title">回收站</span>
 			</el-menu-item>
-			<el-menu-item
+			<!-- <el-menu-item
 				index="8"
 				:route="{ name: 'File', query: { fileType: 8, filePath: '/' } }"
 				class="my-share"
 			>
 				<i class="el-icon-share"></i>
 				<span slot="title">我的分享</span>
-			</el-menu-item>
+			</el-menu-item> -->
 		</el-menu>
 		<!-- 存储信息显示 -->
 		<div class="storage-wrapper" :class="{ fold: isCollapse }">
@@ -129,8 +129,8 @@ export default {
 				3: '视频',
 				4: '音乐',
 				5: '其他',
-				6: '回收站',
-				8: '我的分享'
+				6: '回收站'
+				// 8: '我的分享'
 			},
 			//  自定义进度条颜色，不同占比，进度条颜色不同
 			storageColor: [

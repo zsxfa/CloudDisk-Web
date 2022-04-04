@@ -159,10 +159,6 @@ export default {
 						this.showFileRecovery() //  回收站
 						break
 					}
-					case 8: {
-						this.showMyShareFile() //  我的分享
-						break
-					}
 					default: {
 						this.showFileListByType()
 						break

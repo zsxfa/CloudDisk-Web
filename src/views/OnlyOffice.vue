@@ -64,13 +64,13 @@ export default {
 				memo: this.fileInfo.memo
 			}
 			createOfficeFile(data).then((res) => {
-				if (res.code === 200) {
+				if (res.code === 20000) {
 					let config = {
-						...res.data.file,
+						...res.data.jsonObject.file,
 						type: this.platform
 					}
 					// config.editorConfig.callbackUrl = config.editorConfig.callbackUrl.replace('/IndexServlet', ONLYOFFICE_BASE_URL + '/IndexServlet')
-					this.initDocEditor(res.data.docserviceApiUrl, config)
+					this.initDocEditor(res.data.jsonObject.docserviceApiUrl, config)
 				}
 			})
 		},
@@ -130,11 +130,11 @@ export default {
 			previewOfficeFile(data).then((res) => {
 				if (res.code === 200) {
 					let config = {
-						...res.data.file,
+						...res.data.jsonObject.file,
 						type: this.platform
 					}
 					config.document.permissions.edit = false //  预览模式下编辑权限为 false
-					this.initDocEditor(res.data.docserviceApiUrl, config)
+					this.initDocEditor(res.data.jsonObject.docserviceApiUrl, config)
 				}
 			})
 		},
@@ -149,10 +149,10 @@ export default {
 			editOfficeFile(data).then((res) => {
 				if (res.code === 200) {
 					let config = {
-						...res.data.file,
+						...res.data.jsonObject.file,
 						type: this.platform
 					}
-					this.initDocEditor(res.data.docserviceApiUrl, config)
+					this.initDocEditor(res.data.jsonObject.docserviceApiUrl, config)
 				}
 			})
 		},

@@ -25,7 +25,7 @@ const config = {
 	 * 对应 vue.config.js 中配置的 devServer.proxy 中的代理之一
 	 * 若修改了此值，请同步修改 vue.config.js 中 devServer.proxy 对应的值
 	 */
-	baseContext: 'http://localhost:80'
+	baseContext: 'http://localhost:8100'
 }
 
 export default config

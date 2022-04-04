@@ -6,12 +6,12 @@ module.exports = {
 
 	devServer: {
 		disableHostCheck: true,
+		// port: 9000,
 		host: '0.0.0.0',
 		// 配置代理，解决本地开发环境下跨域请求后台接口的问题，proxy 中的修改项修改完后需要重启项目才可生效
 		proxy: {
 			'/api': {
-				// target: 'http://localhost:8081', //  本地开发环境 - 连接后台接口
-				target: 'http://localhost:80', //  本地开发环境 - 连接后台接口
+				target: 'http://localhost:8100', //  本地开发环境 - 连接后台接口
 				ws: true, //是否跨域
 				changeOrigin: true,
 				pathRewrite: {

@@ -99,13 +99,11 @@ const globalFunction = {
 		let userFileId = row.userFileId
 		let extendName = row.extendName
 
-		fileUrl = `${location.protocol}//${location.host}${
-			config.baseContext
+		fileUrl = `${location.protocol}//${
+			location.host
 		}/filetransfer/preview?userFileId=${
 			row.userFileId
-		}&isMin=false&shareBatchNum=${row.shareBatchNum}&extractionCode=${
-			row.extractionCode
-		}&token=${globalFunction.getCookies('token')}`
+		}&isMin=false&token=${globalFunction.getCookies('token')}`
 		const { href } = router.resolve({
 			name: 'Onlyoffice',
 			query: {
@@ -137,9 +135,7 @@ const globalFunction = {
 			config.baseContext
 		}/filetransfer/preview?userFileId=${
 			row.userFileId
-		}&isMin=false&shareBatchNum=${row.shareBatchNum}&extractionCode=${
-			row.extractionCode
-		}&token=${globalFunction.getCookies('token')}`
+		}&isMin=false&token=${globalFunction.getCookies('token')}`
 		const { href } = router.resolve({
 			name: 'Onlyoffice',
 			query: {

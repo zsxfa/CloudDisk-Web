@@ -9,8 +9,6 @@
 import showAddFolderDialog from '_c/file/dialog/addFolder/index.js'
 import showAddFileDialog from '_c/file/dialog/addFile/index.js'
 import showMoveFileDialog from '_c/file/dialog/moveFile/index.js'
-import showSaveShareFileDialog from '_c/file/dialog/saveShareFile/index.js'
-import showShareFileDialog from '_c/file/dialog/shareFile/index.js'
 import showRenameFileDialog from '_c/file/dialog/renameFile/index.js'
 import showDeleteFileDialog from '_c/file/dialog/deleteFile/index.js'
 import showRestoreFileDialog from '_c/file/dialog/restoreFile/index.js'
@@ -26,8 +24,6 @@ const operateElement = {
 		Vue.prototype.$addFolder = showAddFolderDialog
 		Vue.prototype.$addFile = showAddFileDialog
 		Vue.prototype.$moveFile = showMoveFileDialog
-		Vue.prototype.$saveShareFile = showSaveShareFileDialog
-		Vue.prototype.$shareFile = showShareFileDialog
 		Vue.prototype.$renameFile = showRenameFileDialog
 		Vue.prototype.$deleteFile = showDeleteFileDialog
 		Vue.prototype.$restoreFile = showRestoreFileDialog

@@ -58,6 +58,7 @@
 import CanvasNest from 'canvas-nest.js'
 import DragVerify from '_c/common/DragVerify.vue' //  引入滑动解锁组件
 import { login } from '_r/user.js'
+// import Cookies from 'js-cookie'
 // import user from '@/store/module/user'
 
 // 配置
@@ -119,11 +120,11 @@ export default {
 	},
 	created() {
 		// 用户若已登录，自动跳转到首页
-		if (this.$store.getters.isLogin) {
-			let username = this.$store.getters.userName
-			console.log(
-				'123行的username是：' + this.$store.getters.userInfoObj.userName
-			)
+		// if (this.$store.getters.isLogin) {
+		if (this.$store.state.user.isLogin) {
+			debugger
+			let username = this.$store.getters.username
+			console.log('123行的username是：' + this.$store.getters.username)
 			this.$message({
 				message: `${username} 您已登录！已跳转到首页`,
 				center: true,

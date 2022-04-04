@@ -42,13 +42,13 @@
 			>
 				<i class="el-icon-edit-outline"></i> 重命名
 			</li>
-			<li
+			<!-- <li
 				class="right-menu-item"
 				@click="handleShareFileBtnClick(selectedFile)"
 				v-if="shareBtnShow"
 			>
 				<i class="el-icon-share"></i> 分享
-			</li>
+			</li> -->
 			<li
 				class="right-menu-item"
 				@click="visible = false"
