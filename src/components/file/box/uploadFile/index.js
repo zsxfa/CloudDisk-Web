@@ -26,51 +26,51 @@ const initInstanceUploadFile = (params, uploadWay) => {
  * 右键菜单 Promise 函数
  * @returns {Promise} 抛出确认和取消回调函数
  */
-const showUploadFileBox = (obj) => {
-  // 非首次调用服务时，在 DOM 中移除上个实例
-  if (uploadFileInstance !== null) {
-    let { params, uploadWay, serviceEl, callType } = obj
-    uploadFileInstance.params = params
-    uploadFileInstance.uploadWay = uploadWay
-    uploadFileInstance.serviceEl = serviceEl
-    uploadFileInstance.callType = callType
-    uploadFileInstance.handlePrepareUpload() //  上传组件开始预处理
-  } else {
-    let { params, uploadWay, serviceEl, callType } = obj
-    return new Promise((reslove) => {
-      initInstanceUploadFile(params, uploadWay, serviceEl, callType)
-      uploadFileInstance.callback = (res) => {
-        reslove(res)
-        // 服务取消时卸载 DOM
-        if (res === 'cancel' && uploadFileInstance !== null) {
-          document.body.removeChild(uploadFileInstance.$el)
-          uploadFileInstance = null
-        }
-      }
-      document.body.appendChild(uploadFileInstance.$el) //  挂载 DOM
-      Vue.nextTick(() => {
-        uploadFileInstance.handlePrepareUpload() //  上传组件开始预处理
-      })
-    })
-  }
-}
+// const showUploadFileBox = (obj) => {
+//   // 非首次调用服务时，在 DOM 中移除上个实例
+//   if (uploadFileInstance !== null) {
+//     let { params, uploadWay, serviceEl, callType } = obj
+//     uploadFileInstance.params = params
+//     uploadFileInstance.uploadWay = uploadWay
+//     uploadFileInstance.serviceEl = serviceEl
+//     uploadFileInstance.callType = callType
+//     uploadFileInstance.handlePrepareUpload() //  上传组件开始预处理
+//   } else {
+//     let { params, uploadWay, serviceEl, callType } = obj
+//     return new Promise((reslove) => {
+//       initInstanceUploadFile(params, uploadWay, serviceEl, callType)
+//       uploadFileInstance.callback = (res) => {
+//         reslove(res)
+//         // 服务取消时卸载 DOM
+//         if (res === 'cancel' && uploadFileInstance !== null) {
+//           document.body.removeChild(uploadFileInstance.$el)
+//           uploadFileInstance = null
+//         }
+//       }
+//       document.body.appendChild(uploadFileInstance.$el) //  挂载 DOM
+//       Vue.nextTick(() => {
+//         uploadFileInstance.handlePrepareUpload() //  上传组件开始预处理
+//       })
+//     })
+//   }
+// }
 
 /**
  * 右键菜单 Promise 函数
  * @returns {Promise} 抛出确认和取消回调函数
  */
-// const showUploadFileBox = (obj) => {
-// 	let { params, uploadWay } = obj
-// 	return new Promise((reslove) => {
-// 		initInstanceUploadFile(params, uploadWay)
-// 		uploadFileInstance.callback = (res) => {
-// 			reslove(res)
-// 		}
-// 		document.body.appendChild(uploadFileInstance.$el) //  挂载 DOM
-// 		Vue.nextTick(() => {
-// 			uploadFileInstance.handlePrepareUpload() //  上传组件开始预处理
-// 		})
-// 	})
-// }
+const showUploadFileBox = (obj) => {
+  let { params, uploadWay } = obj
+  return new Promise((reslove) => {
+    initInstanceUploadFile(params, uploadWay)
+    uploadFileInstance.callback = (res) => {
+      reslove(res)
+    }
+    document.body.appendChild(uploadFileInstance.$el) //  挂载 DOM
+    Vue.nextTick(() => {
+      uploadFileInstance.handlePrepareUpload() //  上传组件开始预处理
+    })
+  })
+}
 
 export default showUploadFileBox

@@ -2,10 +2,21 @@
   <div class="operation-menu-wrapper" :class="'file-type-' + fileType">
     <el-button-group class="create-operate-group">
       <el-dropdown class="upload-drop" trigger="hover">
-        <el-button type="primary" icon="el-icon-upload2" id="uploadFileId"
+        <el-button
+          type="primary"
+          icon="el-icon-upload2"
+          id="uploadFileId"
+          :disabled="
+            (selectedFiles.length && isBatchOperation) || fileType !== 0
+          "
           >上传<i class="el-icon-arrow-down el-icon--right"></i
         ></el-button>
-        <el-dropdown-menu slot="dropdown">
+        <el-dropdown-menu
+          slot="dropdown"
+          :disabled="
+            (selectedFiles.length && isBatchOperation) || fileType !== 0
+          "
+        >
           <el-dropdown-item @click.native="handleUploadFileBtnClick(1)"
             >上传文件</el-dropdown-item
           >
